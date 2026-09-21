@@ -12,12 +12,17 @@ namespace detail {
 
 constexpr std::array<std::uint32_t, 256> make_crc32c_table() noexcept {
   std::array<std::uint32_t, 256> table{};
-  for (std::uint32_t i = 0; i < 256u; ++i) {
-    std::uint32_t c = i;
+  // Written with a range-for over the array rather than an indexed store: the index
+  // is then structurally absent instead of merely provable, which is exactly the
+  // property a reader (and a static analyzer) should not have to re-derive.
+  std::uint32_t index = 0;
+  for (std::uint32_t& slot : table) {
+    std::uint32_t c = index;
     for (int k = 0; k < 8; ++k) {
       c = ((c & 1u) != 0u) ? (0x82F63B78u ^ (c >> 1)) : (c >> 1);
     }
-    table[i] = c;
+    slot = c;
+    ++index;
   }
   return table;
 }

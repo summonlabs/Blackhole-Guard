@@ -7,7 +7,7 @@ deterministically and truthfully:
 > missing or contradictory: **is traffic being blackholed now, where is the failure
 > localized, what authority must be fenced, and when may the path be restored?**
 
-It is built by Summon Software Labs and released as version 1.0.0.
+It is built by Summon Software Labs and released as version 1.0.1.
 
 The defining distinction of the product is that **path legality is not delivery
 proof**. A path that exists in the topology, is administratively up and has a valid
@@ -506,7 +506,7 @@ projected.
 | AddressSanitizer build (`/fsanitize=address`, RelWithDebInfo) | clean |
 | AddressSanitizer ctest | 14/14 suites, 0 failures, 15.5 s |
 | ASan capability check | a deliberate heap-buffer-overflow in a scratch program is reported by AddressSanitizer, and `clang_rt.asan`/`__asan_` are present in the built test binaries |
-| Static analysis | **UNSUPPORTED on this host** -- no separate analyzer toolchain is installed; the strict warning set build is the only static check that ran |
+| Static analysis | MSVC `/analyze` over the library, tools and examples: **zero findings in repository code**, aside from platform-SDK header diagnostics. A separate analyzer toolchain (clang-tidy, Coverity) is not installed on this host and is marked **UNSUPPORTED** |
 | `cmake --install` | succeeds; headers, static library, `bhg_cli`, and CMake package files installed |
 | Out-of-tree consumer | copied outside the source tree, configured with `find_package(BlackholeGuard CONFIG REQUIRED)`, built, linked and run: `consumer ok: version 1.0.0 decisions=4 fences=1` |
 | CLI and examples | `bhg_cli version|demo|report` and both examples run against real built artifacts and report consistent state |

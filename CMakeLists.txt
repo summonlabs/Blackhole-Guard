@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.20)
 
 project(BlackholeGuard
-  VERSION 1.0.0
+  VERSION 1.0.1
   DESCRIPTION "Delivery blackhole detection, localization and bounded fencing intent"
   HOMEPAGE_URL "https://github.com/summonlabs/Blackhole-Guard"
   LANGUAGES CXX)

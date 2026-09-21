@@ -19,7 +19,7 @@ namespace bhg {
 
 inline constexpr std::uint16_t kVersionMajor = 1;
 inline constexpr std::uint16_t kVersionMinor = 0;
-inline constexpr std::uint16_t kVersionPatch = 0;
+inline constexpr std::uint16_t kVersionPatch = 1;
 
 /// Durable/native format version. Bumped only on incompatible layout changes.
 inline constexpr std::uint16_t kFormatVersion = 1;
@@ -27,7 +27,7 @@ inline constexpr std::uint16_t kFormatVersion = 1;
 /// Framed wire protocol version.
 inline constexpr std::uint16_t kProtocolVersion = 1;
 
-inline constexpr const char* kVersionString = "1.0.0";
+inline constexpr const char* kVersionString = "1.0.1";
 inline constexpr const char* kProductName = "Blackhole Guard";
 inline constexpr const char* kProductVendor = "Summon Software Labs";
 
