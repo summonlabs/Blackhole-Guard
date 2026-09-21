@@ -1,0 +1,5 @@
+add_executable(bhg_example_fence observe_and_fence.cpp)
+target_link_libraries(bhg_example_fence PRIVATE BlackholeGuard::blackhole_guard)
+
+add_executable(bhg_example_lineage query_lineage.cpp)
+target_link_libraries(bhg_example_lineage PRIVATE BlackholeGuard::blackhole_guard)
