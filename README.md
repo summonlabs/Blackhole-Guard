@@ -7,8 +7,6 @@ deterministically and truthfully:
 > missing or contradictory: **is traffic being blackholed now, where is the failure
 > localized, what authority must be fenced, and when may the path be restored?**
 
-It is built by Summon Software Labs and released as version 1.0.1.
-
 The defining distinction of the product is that **path legality is not delivery
 proof**. A path that exists in the topology, is administratively up and has a valid
 route is *legal*; that says nothing about whether packets reach the far end. Blackhole
