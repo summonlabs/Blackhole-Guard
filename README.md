@@ -509,7 +509,7 @@ projected.
 | Static analysis | MSVC `/analyze` over the library, tools and examples: **zero findings in repository code**, aside from platform-SDK header diagnostics. A separate analyzer toolchain (clang-tidy, Coverity) is not installed on this host and is marked **UNSUPPORTED** |
 | `cmake --install` | succeeds; headers, static library, `bhg_cli`, and CMake package files installed |
 | Out-of-tree consumer | copied outside the source tree, configured with `find_package(BlackholeGuard CONFIG REQUIRED)`, built, linked and run: `consumer ok: version 1.0.0 decisions=4 fences=1` |
-| CLI and examples | `bhg_cli version|demo|report` and both examples run against real built artifacts and report consistent state |
+| CLI and examples | `bhg_cli version\|demo\|report` and both examples run against real built artifacts and report consistent state |
 | Scale (completed work, fsync per decision) | 256 decisions: 1.02 ms/decision, 262 durable records; 512: 0.93 ms/decision, 522 records; 1024: 0.94 ms/decision, 1042 records -- record count ratios 1.99x and 2.00x for 2x work, i.e. strictly linear |
 | Localization effort | 4 hops: 896 search nodes; 8 hops: 2816; 16 hops: 9728, all bounded by the configured 200000-node budget |
 
